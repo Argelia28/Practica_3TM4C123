@@ -2,7 +2,7 @@
 
 char *read_name(char delimitador, int *final){
     char x;
-    char arreglo[50];
+    char arreglo[20];
     int contador=0;
     x=readChar();
     while (x != delimitador){
