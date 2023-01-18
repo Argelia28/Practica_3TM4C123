@@ -36,8 +36,8 @@ extern void Configurar_UART4(void)
 {
     SYSCTL->RCGCUART  = (1<<4);   //Pag.344 UART/modulo4 0->Disable 1->Enable
     SYSCTL->RCGCGPIO |= (1<<2);   //Puerto C pag.340 Enable clock
-    //*GPIOC -> LOCK = 0x4C4F434B;
-    //*GPIOC -> CR = 0x30; // Bit 4 y 5
+    GPIOC -> LOCK = 0x4C4F434B;
+    GPIOC -> CR = 0x30; // Bit 4 y 5
     GPIOC->AFSEL = (1<<4) | (1<<5); // Pag. 672 pin 4 y 5 porque se usa C4 y C5
     //GPIOPCTL PC4->U4Rx PC5->U4Tx pag.689
     GPIOC->PCTL = (GPIOC->PCTL&0xFF00FFFF) | 0x00110000;// (1<<16) | (1<<20); *DUDA
